@@ -111,10 +111,68 @@ pytest tests/ --cov=src --cov-report=html
 
 ## 개발 진행 상황
 
-- [ ] RED: 테스트 케이스 작성
-- [ ] GREEN: 기본 기능 구현
+- [x] RED: 테스트 케이스 작성 (완료)
+- [ ] GREEN: 기본 기능 구현 (진행 예정)
 - [ ] REFACTOR: 코드 개선
 - [ ] 모든 테스트 케이스 통과 확인
+
+## GREEN 단계 작업 목록
+
+### 구현 우선순위
+
+#### 높음 (High Priority) - 필수 구현 항목
+
+1. **`add` 함수 구현**
+   - [ ] 양수 덧셈: `add(1, 10) = 11`
+   - [ ] 0 포함 덧셈: `add(0, 1) = 1`
+   - [ ] 음수 덧셈: `add(-1, -10) = -11`
+   - **테스트 케이스**: 3개 (`TestAddition` 클래스)
+
+2. **`subtract` 함수 구현**
+   - [ ] 기본 뺄셈: `subtract(5, 2) = 3`
+   - **테스트 케이스**: 1개 (`TestSubtraction` 클래스)
+
+3. **`multiply` 함수 구현**
+   - [ ] 음수 곱셈: `multiply(-5, -3) = 15`
+   - [ ] 0 곱셈: `multiply(0, 10) = 0`
+   - **테스트 케이스**: 2개 (`TestMultiplication` 클래스)
+
+4. **`divide` 함수 구현**
+   - [ ] 정수 나눗셈: `divide(5, 2) = 2` (소수점 버림)
+   - [ ] 음수 나눗셈: `divide(-10, 2) = -5`
+   - [ ] 예외 처리: `divide(0, 0)` → `ZeroDivisionError` 발생
+   - **테스트 케이스**: 3개 (`TestDivision` 클래스)
+
+5. **`quotient` 함수 구현**
+   - [ ] 소수점 몫: `quotient(5, 2) = 2.5`
+   - **테스트 케이스**: 1개 (`TestQuotient` 클래스)
+
+#### 중간 (Medium Priority) - 검증 항목
+
+- [ ] 예외 처리 구현 (`ZeroDivisionError`)
+- [ ] 음수 처리 검증
+- [ ] 경계값 처리 검증 (0 포함 연산)
+
+#### 낮음 (Low Priority) - 개선 항목
+
+- [ ] 코드 최적화
+- [ ] 추가 docstring 개선
+- [ ] 성능 최적화 (필요시)
+
+### GREEN 단계 목표
+
+- ✅ 총 **10개 테스트** 모두 통과
+- ✅ 성공률 **100%**
+- ✅ 코드 커버리지 **100%** (실제 로직 포함)
+- ✅ 모든 예외 처리 검증 완료
+
+### 검증 체크리스트
+
+- [ ] `TestAddition` 클래스: 3개 테스트 통과
+- [ ] `TestSubtraction` 클래스: 1개 테스트 통과
+- [ ] `TestMultiplication` 클래스: 2개 테스트 통과
+- [ ] `TestDivision` 클래스: 3개 테스트 통과
+- [ ] `TestQuotient` 클래스: 1개 테스트 통과
 
 ## 라이선스
 
