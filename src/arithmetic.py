@@ -24,6 +24,8 @@ def divide(a, b):
 
 def quotient(a, b):
     """몫 계산 함수 (소수점 포함)"""
+    if b == 0:
+        raise ZeroDivisionError
     return a / b
 
 

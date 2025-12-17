@@ -149,9 +149,18 @@ pytest tests/ --cov=src --cov-report=html
 
 #### 중간 (Medium Priority) - 검증 항목
 
-- [ ] 예외 처리 구현 (`ZeroDivisionError`)
-- [ ] 음수 처리 검증
-- [ ] 경계값 처리 검증 (0 포함 연산)
+- [x] 예외 처리 구현 (`ZeroDivisionError`)
+  - [x] `quotient` 함수 예외 처리 추가
+  - [x] `quotient` 예외 처리 테스트 추가
+  - [x] `divide` 추가 예외 케이스 검증 (양수/음수 ÷ 0)
+- [x] 음수 처리 검증
+  - [x] `subtract` 음수 조합 테스트 3개 추가
+  - [x] `quotient` 음수 조합 테스트 3개 추가
+  - [x] `add` 양수+음수 조합 테스트 추가
+- [x] 경계값 처리 검증 (0 포함 연산)
+  - [x] `subtract` 경계값 테스트 3개 추가
+  - [x] `divide` 경계값 테스트 2개 추가
+  - [x] `quotient` 경계값 테스트 2개 추가
 
 #### 낮음 (Low Priority) - 개선 항목
 
