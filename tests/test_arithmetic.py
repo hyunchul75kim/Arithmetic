@@ -21,6 +21,11 @@ class TestAddition:
     def test_add_negative_numbers(self):
         """-1 + (-10) = -11"""
         assert add(-1, -10) == -11
+    
+    def test_add_positive_and_negative(self):
+        """10 + (-5) = 5, -5 + 10 = 5"""
+        assert add(10, -5) == 5
+        assert add(-5, 10) == 5
 
 
 class TestSubtraction:
@@ -29,6 +34,30 @@ class TestSubtraction:
     def test_subtract_5_and_2(self):
         """5 - 2 = 3"""
         assert subtract(5, 2) == 3
+    
+    def test_subtract_negative_numbers(self):
+        """-5 - (-2) = -3"""
+        assert subtract(-5, -2) == -3
+    
+    def test_subtract_positive_from_negative(self):
+        """-10 - 5 = -15"""
+        assert subtract(-10, 5) == -15
+    
+    def test_subtract_negative_from_positive(self):
+        """10 - (-5) = 15"""
+        assert subtract(10, -5) == 15
+    
+    def test_subtract_zero_from_positive(self):
+        """10 - 0 = 10"""
+        assert subtract(10, 0) == 10
+    
+    def test_subtract_positive_from_zero(self):
+        """0 - 10 = -10"""
+        assert subtract(0, 10) == -10
+    
+    def test_subtract_zero_from_zero(self):
+        """0 - 0 = 0"""
+        assert subtract(0, 0) == 0
 
 
 class TestMultiplication:
@@ -58,6 +87,24 @@ class TestDivision:
         """0 / 0 → ZeroDivisionError 예외 발생"""
         with pytest.raises(ZeroDivisionError):
             divide(0, 0)
+    
+    def test_divide_positive_by_zero(self):
+        """양수를 0으로 나누기 → ZeroDivisionError 예외 발생"""
+        with pytest.raises(ZeroDivisionError):
+            divide(10, 0)
+    
+    def test_divide_negative_by_zero(self):
+        """음수를 0으로 나누기 → ZeroDivisionError 예외 발생"""
+        with pytest.raises(ZeroDivisionError):
+            divide(-10, 0)
+    
+    def test_divide_zero_by_positive(self):
+        """0 ÷ 5 = 0"""
+        assert divide(0, 5) == 0
+    
+    def test_divide_positive_by_one(self):
+        """10 ÷ 1 = 10"""
+        assert divide(10, 1) == 10
 
 
 class TestQuotient:
@@ -66,4 +113,29 @@ class TestQuotient:
     def test_quotient_5_by_2(self):
         """5 ÷ 2 = 2.5 (몫 계산)"""
         assert quotient(5, 2) == 2.5
+    
+    def test_quotient_by_zero_exception(self):
+        """0으로 나누기 → ZeroDivisionError 예외 발생"""
+        with pytest.raises(ZeroDivisionError):
+            quotient(10, 0)
+    
+    def test_quotient_negative_by_positive(self):
+        """-10 ÷ 2 = -5.0"""
+        assert quotient(-10, 2) == -5.0
+    
+    def test_quotient_positive_by_negative(self):
+        """10 ÷ (-2) = -5.0"""
+        assert quotient(10, -2) == -5.0
+    
+    def test_quotient_negative_by_negative(self):
+        """-10 ÷ (-2) = 5.0"""
+        assert quotient(-10, -2) == 5.0
+    
+    def test_quotient_zero_by_positive(self):
+        """0 ÷ 5 = 0.0"""
+        assert quotient(0, 5) == 0.0
+    
+    def test_quotient_positive_by_one(self):
+        """10 ÷ 1 = 10.0"""
+        assert quotient(10, 1) == 10.0
 
