@@ -164,9 +164,16 @@ pytest tests/ --cov=src --cov-report=html
 
 #### 낮음 (Low Priority) - 개선 항목
 
-- [ ] 코드 최적화
-- [ ] 추가 docstring 개선
-- [ ] 성능 최적화 (필요시)
+- [x] 코드 최적화
+  - [x] 타입 힌트 추가 (Python 3.10+ `|` 연산자 사용)
+  - [x] 코드 가독성 향상
+- [x] 추가 docstring 개선
+  - [x] Google style docstring 적용
+  - [x] 모든 함수에 매개변수, 반환값, 예외, 예제 추가
+  - [x] 모듈 docstring 개선
+- [x] 성능 최적화 (필요시)
+  - [x] 타입 힌트로 IDE 지원 향상
+  - [x] 코드 품질 향상 (기본 산술 연산은 이미 최적화됨)
 
 ### GREEN 단계 목표
 

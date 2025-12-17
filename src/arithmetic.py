@@ -1,29 +1,134 @@
 """
 사칙연산 모듈
-TC-CMM-001 / TC-AO-001
+
+이 모듈은 기본적인 사칙연산(덧셈, 뺄셈, 곱셈, 나눗셈)을 제공합니다.
+
+테스트 ID: TC-CMM-001 (Common Module) / TC-AO-001 (Arithmetic Operations)
+
+제공 함수:
+    - add: 덧셈
+    - subtract: 뺄셈
+    - multiply: 곱셈
+    - divide: 정수 나눗셈
+    - quotient: 소수점 포함 나눗셈
 """
 
-# GREEN 단계: 최소한의 코드로 테스트 통과
-def add(a, b):
-    """덧셈 함수"""
+
+def add(a: int | float, b: int | float) -> int | float:
+    """
+    두 숫자의 덧셈을 수행합니다.
+    
+    Args:
+        a (int | float): 첫 번째 숫자
+        b (int | float): 두 번째 숫자
+    
+    Returns:
+        int | float: 두 숫자의 합
+    
+    Examples:
+        >>> add(1, 10)
+        11
+        >>> add(-1, -10)
+        -11
+        >>> add(0, 1)
+        1
+    """
     return a + b
 
-def subtract(a, b):
-    """뺄셈 함수"""
+def subtract(a: int | float, b: int | float) -> int | float:
+    """
+    두 숫자의 뺄셈을 수행합니다.
+    
+    Args:
+        a (int | float): 피감수 (빼는 수)
+        b (int | float): 감수 (빼어지는 수)
+    
+    Returns:
+        int | float: a에서 b를 뺀 결과
+    
+    Examples:
+        >>> subtract(5, 2)
+        3
+        >>> subtract(10, -5)
+        15
+        >>> subtract(0, 10)
+        -10
+    """
     return a - b
 
-def multiply(a, b):
-    """곱셈 함수"""
+def multiply(a: int | float, b: int | float) -> int | float:
+    """
+    두 숫자의 곱셈을 수행합니다.
+    
+    Args:
+        a (int | float): 첫 번째 숫자
+        b (int | float): 두 번째 숫자
+    
+    Returns:
+        int | float: 두 숫자의 곱
+    
+    Examples:
+        >>> multiply(-5, -3)
+        15
+        >>> multiply(0, 10)
+        0
+        >>> multiply(2, 3)
+        6
+    """
     return a * b
 
-def divide(a, b):
-    """나눗셈 함수 (정수 나눗셈)"""
+def divide(a: int | float, b: int | float) -> int:
+    """
+    두 숫자의 정수 나눗셈을 수행합니다.
+    
+    소수점 이하는 버림 처리됩니다 (// 연산자 사용).
+    
+    Args:
+        a (int | float): 피제수 (나누어지는 수)
+        b (int | float): 제수 (나누는 수)
+    
+    Returns:
+        int: a를 b로 나눈 정수 몫
+    
+    Raises:
+        ZeroDivisionError: b가 0일 때 발생
+    
+    Examples:
+        >>> divide(5, 2)
+        2
+        >>> divide(-10, 2)
+        -5
+        >>> divide(0, 5)
+        0
+    """
     if b == 0:
         raise ZeroDivisionError
     return a // b
 
-def quotient(a, b):
-    """몫 계산 함수 (소수점 포함)"""
+def quotient(a: int | float, b: int | float) -> float:
+    """
+    두 숫자의 나눗셈을 수행합니다 (소수점 포함).
+    
+    정확한 나눗셈 결과를 반환합니다 (/ 연산자 사용).
+    
+    Args:
+        a (int | float): 피제수 (나누어지는 수)
+        b (int | float): 제수 (나누는 수)
+    
+    Returns:
+        float: a를 b로 나눈 결과 (소수점 포함)
+    
+    Raises:
+        ZeroDivisionError: b가 0일 때 발생
+    
+    Examples:
+        >>> quotient(5, 2)
+        2.5
+        >>> quotient(-10, 2)
+        -5.0
+        >>> quotient(0, 5)
+        0.0
+    """
     if b == 0:
         raise ZeroDivisionError
     return a / b
