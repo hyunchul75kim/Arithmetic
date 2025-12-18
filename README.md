@@ -217,6 +217,55 @@ python calculator.py
 - [ ] `TestDivision` 클래스: 3개 테스트 통과
 - [ ] `TestQuotient` 클래스: 1개 테스트 통과
 
+## REFACTOR 단계: PyQt GUI 리팩토링 작업 목록
+
+### Phase 3: 뷰 계층 구현 (UI)
+
+#### 3.1 기본 위젯 구현
+- [ ] `src/view/display_widget.py` 생성
+  - 숫자 표시 영역
+  - 입력 상태 표시
+  
+- [ ] `src/view/number_pad.py` 생성
+  - 숫자 버튼 (0-9)
+  - +/- 버튼
+  - . 버튼
+
+#### 3.2 연산자 버튼 구현
+- [ ] 연산자 버튼 그룹 (+, -, *, /, //)
+- [ ] 버튼 스타일링
+
+#### 3.3 CalculatorWindow 구현
+- [ ] `src/view/calculator_window.py` 생성
+  - QMainWindow 상속
+  - 레이아웃 구성
+  - 위젯 배치
+  - Controller 연결
+
+**검증**: GUI 테스트 및 시각적 검증
+
+---
+
+### Phase 4: 통합 및 리팩토링
+
+#### 4.1 의존성 주입 설정
+- [ ] Controller에 Model 주입
+- [ ] Window에 Controller 주입
+- [ ] Factory 패턴으로 객체 생성
+
+#### 4.2 에러 처리 개선
+- [ ] 사용자 친화적 에러 메시지
+- [ ] QMessageBox를 통한 에러 표시
+
+#### 4.3 코드 정리
+- [ ] 불필요한 코드 제거
+- [ ] 타입 힌트 보완
+- [ ] Docstring 추가
+
+#### 4.4 테스트 작성
+- [ ] 통합 테스트
+- [ ] GUI 테스트 (선택사항)
+
 ## 라이선스
 
 이 프로젝트는 테스트 목적으로 작성되었습니다.
