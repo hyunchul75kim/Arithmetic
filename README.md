@@ -249,21 +249,21 @@ python calculator.py
 ### Phase 4: 통합 및 리팩토링
 
 #### 4.1 의존성 주입 설정
-- [ ] Controller에 Model 주입
-- [ ] Window에 Controller 주입
-- [ ] Factory 패턴으로 객체 생성
+- [x] Controller에 Model 주입
+- [x] Window에 Controller 주입
+- [x] Factory 패턴으로 객체 생성 (`src/factory.py`)
 
 #### 4.2 에러 처리 개선
-- [ ] 사용자 친화적 에러 메시지
-- [ ] QMessageBox를 통한 에러 표시
+- [x] 사용자 친화적 에러 메시지
+- [x] QMessageBox를 통한 에러 표시
 
 #### 4.3 코드 정리
-- [ ] 불필요한 코드 제거
-- [ ] 타입 힌트 보완
-- [ ] Docstring 추가
+- [x] 불필요한 코드 제거 (임시 로직 제거)
+- [x] 타입 힌트 보완
+- [x] Docstring 추가
 
 #### 4.4 테스트 작성
-- [ ] 통합 테스트
+- [x] 통합 테스트 (`tests/test_calculator_model.py`, `tests/test_controller.py`)
 - [ ] GUI 테스트 (선택사항)
 
 ## 라이선스
