@@ -222,25 +222,25 @@ python calculator.py
 ### Phase 3: 뷰 계층 구현 (UI)
 
 #### 3.1 기본 위젯 구현
-- [ ] `src/view/display_widget.py` 생성
+- [x] `src/view/display_widget.py` 생성
   - 숫자 표시 영역
   - 입력 상태 표시
   
-- [ ] `src/view/number_pad.py` 생성
+- [x] `src/view/number_pad.py` 생성
   - 숫자 버튼 (0-9)
   - +/- 버튼
   - . 버튼
 
 #### 3.2 연산자 버튼 구현
-- [ ] 연산자 버튼 그룹 (+, -, *, /, //)
-- [ ] 버튼 스타일링
+- [x] 연산자 버튼 그룹 (+, -, *, /, //)
+- [x] 버튼 스타일링
 
 #### 3.3 CalculatorWindow 구현
-- [ ] `src/view/calculator_window.py` 생성
+- [x] `src/view/calculator_window.py` 생성
   - QMainWindow 상속
   - 레이아웃 구성
   - 위젯 배치
-  - Controller 연결
+  - Controller 연결 (임시 로직 포함, Phase 1-2 완료 후 연결 예정)
 
 **검증**: GUI 테스트 및 시각적 검증
 
