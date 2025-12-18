@@ -107,6 +107,19 @@ cd src
 python calculator.py
 ```
 
+### GUI 프로그램 실행
+
+```bash
+# 방법 1: 직접 실행 (프로젝트 루트에서)
+python src\gui_calculator.py
+
+# 방법 2: 모듈로 실행 (권장)
+python -m src.gui_calculator
+
+# 방법 3: 실행 스크립트 사용 (Windows)
+run_gui.bat
+```
+
 **사용 예제:**
 ```
 첫번째 정수값 >>10
@@ -216,6 +229,55 @@ python calculator.py
 - [ ] `TestMultiplication` 클래스: 2개 테스트 통과
 - [ ] `TestDivision` 클래스: 3개 테스트 통과
 - [ ] `TestQuotient` 클래스: 1개 테스트 통과
+
+## REFACTOR 단계: PyQt GUI 리팩토링 작업 목록
+
+### Phase 3: 뷰 계층 구현 (UI)
+
+#### 3.1 기본 위젯 구현
+- [x] `src/view/display_widget.py` 생성
+  - 숫자 표시 영역
+  - 입력 상태 표시
+  
+- [x] `src/view/number_pad.py` 생성
+  - 숫자 버튼 (0-9)
+  - +/- 버튼
+  - . 버튼
+
+#### 3.2 연산자 버튼 구현
+- [x] 연산자 버튼 그룹 (+, -, *, /, //)
+- [x] 버튼 스타일링
+
+#### 3.3 CalculatorWindow 구현
+- [x] `src/view/calculator_window.py` 생성
+  - QMainWindow 상속
+  - 레이아웃 구성
+  - 위젯 배치
+  - Controller 연결 (임시 로직 포함, Phase 1-2 완료 후 연결 예정)
+
+**검증**: GUI 테스트 및 시각적 검증
+
+---
+
+### Phase 4: 통합 및 리팩토링
+
+#### 4.1 의존성 주입 설정
+- [x] Controller에 Model 주입
+- [x] Window에 Controller 주입
+- [x] Factory 패턴으로 객체 생성 (`src/factory.py`)
+
+#### 4.2 에러 처리 개선
+- [x] 사용자 친화적 에러 메시지
+- [x] QMessageBox를 통한 에러 표시
+
+#### 4.3 코드 정리
+- [x] 불필요한 코드 제거 (임시 로직 제거)
+- [x] 타입 힌트 보완
+- [x] Docstring 추가
+
+#### 4.4 테스트 작성
+- [x] 통합 테스트 (`tests/test_calculator_model.py`, `tests/test_controller.py`)
+- [ ] GUI 테스트 (선택사항)
 
 ## 라이선스
 
