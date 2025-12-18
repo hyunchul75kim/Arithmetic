@@ -107,6 +107,19 @@ cd src
 python calculator.py
 ```
 
+### GUI 프로그램 실행
+
+```bash
+# 방법 1: 직접 실행 (프로젝트 루트에서)
+python src\gui_calculator.py
+
+# 방법 2: 모듈로 실행 (권장)
+python -m src.gui_calculator
+
+# 방법 3: 실행 스크립트 사용 (Windows)
+run_gui.bat
+```
+
 **사용 예제:**
 ```
 첫번째 정수값 >>10
